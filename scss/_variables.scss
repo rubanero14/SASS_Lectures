@@ -1,0 +1,10 @@
+// Declaring SCSS global variables, no curly braces needed, prepend '$' in front of the variables when declaring
+$background-color: #333;
+$text-color: rgb(228, 220, 220);
+$highlight-color: rgb(240, 126, 60);
+// Defining Maps variable which has multiple values with normal braces as wrapper and end it with semi-colon, example below
+$font-weights: (
+    "light": 400,
+    "medium": 600,
+    "bold": 700,
+);
