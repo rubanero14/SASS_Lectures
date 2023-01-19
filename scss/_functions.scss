@@ -1,0 +1,6 @@
+// Functions in SCSS has similar syntax to Javascript functions, where it takes params or args and returns SCSS built in functions or new output based on existing variables
+@function weight($weight-name) {
+    // for accessing Maps based variables declared atr main.scss, use map-get syntax where it takes 2 params, first is variable name and 2nd is key of the pairs declared 
+    // within the Maps variable as below example, eg: map-get($font-weights, bold);
+    @return map-get($font-weights , $weight-name)
+}

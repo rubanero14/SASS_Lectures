@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
 }
 .main .main__paragraph {
-  font-weight: 600;
+  font-weight: 400;
 }
 .main .main__paragraph:hover {
   color: rgb(240, 126, 60);
