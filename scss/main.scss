@@ -1,0 +1,23 @@
+// Declaring SCSS global variables, no curly braces needed, prepend '$' in front of the variables when declaring
+$background-color: #333;
+$text-color: rgb(228, 220, 220);
+// Defining Maps variable which has multiple values with normal braces as wrapper and end it with semi-colon, example below
+$font-weights: (
+    "light": 400,
+    "medium": 600,
+    "bold": 700,
+);
+    
+// Just call the nam of the variables directly to the scss properties to use it, example as below
+body {
+    background: $background-color;
+    color: $text-color;
+    // for accessing Maps based variables declared above, use map-get syntax where it takes 2 params, first is variable name and 2nd is key of the pairs declared within the 
+    // Maps variable as below example
+    font-weight: map-get($font-weights , medium);
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
