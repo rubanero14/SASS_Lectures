@@ -11,43 +11,43 @@ body {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
 }
-.main {
+.main, .footer {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
 }
 @media (width <= 992px) {
-  .main {
+  .main, .footer {
     width: 80%;
   }
 }
-.main .main__title {
+.main .main__title, .footer .main__title {
   font-weight: 700;
   text-align: start;
   margin-bottom: 1rem;
 }
 @media (width <= 992px) {
-  .main .main__title {
+  .main .main__title, .footer .main__title {
     text-align: start;
   }
 }
-.main .main__title:hover {
+.main .main__title:hover, .footer .main__title:hover {
   color: rgb(60, 159, 240);
 }
-.main .main__paragraph1, .main .main__paragraph2, .main .main__paragraph3 {
+.main .main__paragraph1, .footer .main__paragraph1, .main .main__paragraph2, .footer .main__paragraph2, .main .main__paragraph3, .footer .main__paragraph3 {
   font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (width <= 992px) {
-  .main .main__paragraph1, .main .main__paragraph2, .main .main__paragraph3 {
+  .main .main__paragraph1, .footer .main__paragraph1, .main .main__paragraph2, .footer .main__paragraph2, .main .main__paragraph3, .footer .main__paragraph3 {
     text-align: start;
   }
 }
-.main .main__paragraph1:hover, .main .main__paragraph2:hover, .main .main__paragraph3:hover {
+.main .main__paragraph1:hover, .footer .main__paragraph1:hover, .main .main__paragraph2:hover, .footer .main__paragraph2:hover, .main .main__paragraph3:hover, .footer .main__paragraph3:hover {
   color: rgb(60, 159, 240);
 }
-.main .main__paragraph2:hover, .main .main__paragraph3:hover {
+.main .main__paragraph2:hover, .footer .main__paragraph2:hover, .main .main__paragraph3:hover, .footer .main__paragraph3:hover {
   color: #c0548a;
 }
 
