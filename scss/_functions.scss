@@ -2,5 +2,11 @@
 @function weight($weight-name) {
     // for accessing Maps based variables declared atr main.scss, use map-get syntax where it takes 2 params, first is variable name and 2nd is key of the pairs declared 
     // within the Maps variable as below example, eg: map-get($font-weights, bold);
-    @return map-get($font-weights , $weight-name)
+    @return map-get($font-weights , $weight-name);
+};
+
+@function text-alignment($align-name) {
+    @return map-get($text-aligns, $align-name);
 }
+
+/// Note: Functions are used to compute values or return values

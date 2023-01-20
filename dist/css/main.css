@@ -7,14 +7,37 @@
 body {
   background: #333;
   color: rgb(228, 220, 220);
+  margin: 50px auto;
+  display: inline-block;
 }
-
 .main {
+  display: flex;
+  flex-direction: column;
   width: 80%;
   margin: 0 auto;
 }
+.main .main__title {
+  font-weight: 700;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+@media (width <= 578px) {
+  .main .main__title {
+    text-align: center;
+  }
+}
+.main .main__title:hover {
+  color: rgb(240, 126, 60);
+}
 .main .main__paragraph {
   font-weight: 400;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+@media (width <= 578px) {
+  .main .main__paragraph {
+    text-align: center;
+  }
 }
 .main .main__paragraph:hover {
   color: rgb(240, 126, 60);

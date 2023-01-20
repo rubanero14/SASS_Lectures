@@ -2,23 +2,55 @@
 @import './resets';
 @import './variables';
 @import './functions';
+@import './mixin';
 
-    
 // Just call the nam of the variables directly to the scss properties to use it, example as below
 body {
     background: $background-color;
-    color: $text-color;    
+    color: $text-color;
+    margin: 50px auto;
+    display: inline-block;
+
+    // Importing and assigning theme mixin here and assiging to the light class and passed the variables as params as boolean values
+    &.light {
+        @include theme($dark-theme: true);
+    }
 }
 
 .main {
+    // to use the mixin declared in partials or here, simply use the syntax @include and followed by the name of the mixin, with passing params required by the mixin
+    @include flexCenter(column);
     width: 80%;
     margin: 0 auto;
     
     // & or ampersand can be replaced with the word .main, its a shorthand syntax supported by SCSS for BEM based CSS convention
-    // wrapping the & or ampersand with #{}, ensures .main__paragraph is considered as child element and inherits all the .main's styles 
+    // wrapping the & or ampersand with #{}, ensures .main__paragraph is considered as child element and inherits all the .main's styles
+    #{&}__title {
+        font-weight: weight(bold);
+        text-align: text-alignment(start);
+        // to use the mixin declared in partials or here, simply use the syntax @include and followed by the name of the mixin
+        @include marginBottom;
+
+        // adding mobileResponsive mixin for mobile view on the element
+        @include mobileResponsive {
+            text-align: text-alignment(center);
+        }
+
+        &:hover {
+            color: $highlight-color;
+        }
+    }
+
     #{&}__paragraph {
         // We are reusing the weight() function declared in _functions.scss file and passing the param as declared in _variables.scss
         font-weight: weight(light);
+        text-align: text-alignment(start);
+        @include marginBottom;
+
+        // adding mobileResponsive mixin for mobile view on the element
+        @include mobileResponsive {
+            text-align: text-alignment(center);
+        }
 
         &:hover {
             color: $highlight-color

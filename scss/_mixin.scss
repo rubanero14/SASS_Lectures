@@ -1,0 +1,31 @@
+// Mixin allows to reuse the scss codes across different elements that has same values, this is DRY concept of SCSS, where you can nest multiple css codes that similar and 
+// name it appropriately in this case marginBottom fits the content of code nested inside the mixin, and can reused globally
+@mixin marginBottom {
+    margin-bottom: 1rem;
+}
+
+// similar tp function, mixin also can take arguements or params, for example as below
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+// Dark or Light theme mixin, where a named param is passed and a boolean value is assigned while passing into it when creating the mixin
+@mixin theme($dark-theme: true) {
+    @if ($dark-theme == false) {
+        // lighten and darken is a built in method by SCSS, where it takes 2 arguements, first is the variable needs change and 2nd is invert it to how many percentage
+        background: lighten($background-color, 100%);
+        color: darken($text-color, 100%);
+        color: darken($highlight-color, 100%);
+    }
+}
+
+// Mixin for dynamic media query or mobile responsiveness
+@mixin mobileResponsive {
+    @media (width <= map-get($mobile-breakpoints, mobile)) {
+        //@content syntax is similar to Vue's slot where you can reuse this mixin and populate relevant styles based on the breakpoints stated
+        @content;
+    }
+}
+
+/// Note: Mixins are used to define styles that are reusable
