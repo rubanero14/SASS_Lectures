@@ -10,6 +10,7 @@ body {
     color: $text-color;
     margin: 50px auto;
     display: inline-block;
+    font-family: $font-family;
 
     // Importing and assigning theme mixin here and assiging to the light class and passed the variables as params as boolean values
     &.light {
@@ -61,7 +62,7 @@ body {
         }
 
         &:hover {
-            color: $highlight-color-blue
+            color: $highlight-color-blue;
         }
     }
 
@@ -73,7 +74,34 @@ body {
 
         // this hover class has different styling from inherited styling, and it takes priority over the inherited ones
         &:hover {
-            color: $highlight-color-orange;
+            color: $highlight-color-pink-hover;
+        }
+    }
+}
+
+.footer {
+    text-align: text-alignment(center);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+
+    .sass-link {
+        text-decoration: none;
+    }
+
+    button {
+        cursor: pointer;
+        background: $highlight-color-pink;
+        color: #fff;
+        font-size: inherit;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: $highlight-color-pink;
+
+        &:hover {
+            background: $highlight-color-pink-hover;
         }
     }
 }

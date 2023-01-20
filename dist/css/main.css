@@ -9,6 +9,7 @@ body {
   color: rgb(228, 220, 220);
   margin: 50px auto;
   display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .main {
   display: flex;
@@ -48,5 +49,29 @@ body {
   color: rgb(60, 159, 240);
 }
 .main .main__paragraph2:hover, .main .main__paragraph3:hover {
-  color: rgb(240, 126, 60);
+  color: #c0548a;
+}
+
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+}
+.footer .sass-link {
+  text-decoration: none;
+}
+.footer button {
+  cursor: pointer;
+  background: #bf4080;
+  color: #fff;
+  font-size: inherit;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: #bf4080;
+}
+.footer button:hover {
+  background: #c0548a;
 }/*# sourceMappingURL=main.css.map */

@@ -16,8 +16,9 @@
         // lighten and darken is a built in method by SCSS, where it takes 2 arguements, first is the variable needs change and 2nd is invert it to how many percentage
         background: lighten($background-color, 100%);
         color: darken($text-color, 100%);
-        color: darken($highlight-color-blue, 100%);
-        color: darken($highlight-color-orange, 100%);
+        color: darken($highlight-color-pink, 100%);
+        color: darken($highlight-color-pink-hover, 100%);
+        color: darken($highlight-color-pink, 100%);
     }
 }
 

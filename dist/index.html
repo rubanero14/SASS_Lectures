@@ -9,10 +9,28 @@
 </head>
 <body class="light">
     <div class="main">
-        <h1 class="main__title">Hello World!</h1>
+        <h1 class="main__title">Hello SASS!</h1>
         <p class="main__paragraph1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
         <p class="main__paragraph2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
         <p class="main__paragraph3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
     </div>
+    <footer class="footer">
+        <p class="info">
+            For more info about, go to the official
+            <a class="sass__link" href="https://sass-lang.com/documentation/" target="_blank">
+                <button class="sass-link__button">
+                    SASS
+                </button>
+            </a>
+            docs.
+        </p>
+        <p class="legal"></p>
+    </footer>
 </body>
+<script defer>
+    const Legal = document.querySelector('.legal');
+    const Year = new Date().getFullYear();
+
+    Legal.innerHTML = `&copy; ${Year} by Raj `
+</script>
 </html>
