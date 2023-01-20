@@ -1,5 +1,5 @@
 # SASS_Lectures
-In-depth learning about SASS
+# vIn-depth learning about SASS
 
 ```
 Variables
@@ -137,4 +137,11 @@ Math Operations
 // which works fine on SCSS should that need arises
 width: 100% - 10%;
 ```
-Visit SASS Docs Demo: https://rubanero14.github.io/SASS_Lectures/
+_____________________________________________________________________________________________________________________________
+
+# Visit SASS Docs [Demo](https://rubanero14.github.io/SASS_Lectures)
+_____________________________________________________________________________________________________________________________
+
+# Source: [fCC](https://www.youtube.com/watch?v=_a5j7KoflTs)
+
+
