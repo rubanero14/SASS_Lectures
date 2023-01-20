@@ -25,7 +25,7 @@ body {
     // in CSS we need calc() method, but in SCSS we dont need that method to perform Math operations
     // Noted: In SCSS we can only perform math operation of the same type, like 80%- 50%, but we can't do 80% - 30px, we can override this using CSS's calc() method here
     // which works fine on SCSS should that need arises
-    width: 80% - 30%;
+    width: 100% - 10%;
     margin: 0 auto;
     
     @include mobileResponsive {
@@ -42,7 +42,7 @@ body {
 
         // adding mobileResponsive mixin for mobile view on the element
         @include mobileResponsive {
-            text-align: text-alignment(center);
+            text-align: text-alignment(start);
         }
 
         &:hover {
@@ -53,12 +53,11 @@ body {
     #{&}__paragraph1 {
         // We are reusing the weight() function declared in _functions.scss file and passing the param as declared in _variables.scss
         font-weight: weight(light);
-        text-align: text-alignment(start);
         @include marginBottom;
 
         // adding mobileResponsive mixin for mobile view on the element
         @include mobileResponsive {
-            text-align: text-alignment(center);
+            text-align: text-alignment(start);
         }
 
         &:hover {
@@ -81,9 +80,7 @@ body {
 
 .footer {
     text-align: text-alignment(center);
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    margin: 50px auto 0px auto;
     width: 100%;
     padding: 30px 0;
 

@@ -1,10 +1,11 @@
+/// Note: Mixins are used to define styles that are reusable
 // Mixin allows to reuse the scss codes across different elements that has same values, this is DRY concept of SCSS, where you can nest multiple css codes that similar and 
 // name it appropriately in this case marginBottom fits the content of code nested inside the mixin, and can reused globally
 @mixin marginBottom {
     margin-bottom: 1rem;
 }
 
-// similar tp function, mixin also can take arguements or params, for example as below
+// similar to function, mixin also can take arguements or params, for example as below
 @mixin flexCenter($direction) {
     display: flex;
     flex-direction: $direction;
@@ -29,5 +30,3 @@
         @content;
     }
 }
-
-/// Note: Mixins are used to define styles that are reusable

@@ -10,9 +10,157 @@
 <body class="light">
     <div class="main">
         <h1 class="main__title">Hello SASS!</h1>
-        <p class="main__paragraph1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
-        <p class="main__paragraph2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
-        <p class="main__paragraph3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde possimus saepe perspiciatis fugiat quisquam ea dolor odio odit, sequi iure dicta earum recusandae quibusdam. Iure tempora fugit consequuntur, deserunt molestiae vel repellendus possimus, assumenda eaque excepturi exercitationem atque pariatur qui autem delectus. Magni, accusamus voluptatem. Quisquam vero delectus accusantium veniam.</p>
+        <p class="main__paragraph1">
+            <code>
+                <span>Variables</span><br />
+                // Declaring SCSS global variables, no curly braces needed, prepend '$' in front of the variables when declaring <br/>
+                $background-color: #333; <br />
+                $text-color: rgb(228, 220, 220); <br />
+                $highlight-color-pink: #bf4080; <br />
+                $highlight-color-pink-hover: #c0548a; <br />
+                $highlight-color-blue: rgb(60, 159, 240); <br />
+                $font-family: Arial, Helvetica, sans-serif;
+                <br/><br/>
+                <span>Maps</span><br />
+                // Defining Maps variable which has multiple values with normal braces as wrapper and end it with semi-colon, example
+                below<br />
+                $font-weights: (<br />
+                "light": 400,<br />
+                "medium": 600,<br />
+                "bold": 700,<br />
+                );
+                <br /><br />
+                $text-aligns: (<br />
+                "start": start,<br />
+                "center": center,<br />
+                "end": end,<br />
+                );
+                <br /><br />
+                $mobile-breakpoints: (<br />
+                "mobile": 578px,<br />
+                "tablet": 992px,<br />
+                "desktop": 1920px,<br />
+                );
+            </code>
+        </p>
+        <p class="main__paragraph2">
+            <code>
+                <span>Nesting</span></br/>
+                // Simple SCSS Nesting example</br />
+                body {</br />
+                &nbsp;background: $background-color;</br />
+                &nbsp;color: $text-color;</br />
+                &nbsp;margin: 50px auto;</br />
+                &nbsp;display: inline-block;</br />
+                &nbsp;font-family: $font-family;</br />
+                </br />
+                // Importing and assigning theme mixin here and assiging to the light class and passed the variables as params as
+                boolean values</br />
+                &nbsp;&.light {</br />
+                &nbsp;&nbsp;@include theme($dark-theme: true);</br />
+                &nbsp;}<br/>
+                }
+                <br/><br/>
+                <span>Partials</span><br />
+                // Importing Partials into the main.scss file, notice that no undesrcore needed or url() method needed to import
+                partials, can omit the _ and .scss extension <br />
+                // Naming convention for partial files, example _variables.scss, partial files has appended underscore on their file name <br />
+                // This is one way of splitting files across multiple related to different components and imported back into main file<br />
+                @import './resets';<br />
+                @import './variables';<br />
+                @import './functions';<br />
+                @import './mixin';
+                <br /><br />
+                <span>Functions</span><br />
+                // Note: Functions are used to compute values or return values<br />
+                // Functions in SCSS has similar syntax to Javascript functions, where it takes params or args and returns SCSS built in
+                functions or new output based on existing variables<br /><br />
+                @function weight($weight-name) {<br />
+                // for accessing Maps based variables declared atr main.scss, use map-get syntax where it takes 2 params, first is
+                variable name and 2nd is key of the pairs declared<br />
+                // within the Maps variable as below example, eg: map-get($font-weights, bold);<br />
+                &nbsp;@return map-get($font-weights , $weight-name);<br />
+                };<br />
+                <br />
+                @function text-alignment($align-name) {<br />
+                &nbsp;@return map-get($text-aligns, $align-name);<br />
+                }
+                <br /><br />
+                <span>Mixins</span><br />
+                /// Note: Mixins are used to define styles that are reusable<br />
+                // Mixin allows to reuse the scss codes across different elements that has same values, this is DRY concept of SCSS,
+                where you can nest multiple css codes that similar and<br />
+                // name it appropriately in this case marginBottom fits the content of code nested inside the mixin, and can reused
+                globally<br />
+                @mixin marginBottom {<br />
+                &nbsp;&nbsp;margin-bottom: 1rem;<br />
+                }<br />
+                <br />
+                // similar to function, mixin also can take arguements or params, for example as below<br />
+                @mixin flexCenter($direction) {<br />
+                &nbsp;&nbsp;display: flex;<br />
+                &nbsp;&nbsp;flex-direction: $direction;<br />
+                }<br />
+                <br />
+                // Dark or Light theme mixin, where a named param is passed and a boolean value is assigned while passing into it when
+                creating the mixin<br />
+                @mixin theme($dark-theme: true) {<br />
+                &nbsp;   @if ($dark-theme == false) {<br />
+                &nbsp;&nbsp;    // lighten and darken is a built in method by SCSS, where it takes 2 arguements, first is the variable needs change and 2nd is invert it to how many percentage<br />
+                &nbsp;&nbsp;   background: lighten($background-color, 100%);<br />
+                &nbsp;&nbsp;   color: darken($text-color, 100%);<br />
+                &nbsp;&nbsp;   color: darken($highlight-color-pink, 100%);<br />
+                &nbsp;&nbsp;   color: darken($highlight-color-pink-hover, 100%);<br />
+                &nbsp;&nbsp;   color: darken($highlight-color-pink, 100%);<br />
+                &nbsp;   }<br />
+                }<br />
+                <br />
+                // Mixin for dynamic media query or mobile responsiveness<br />
+                @mixin mobileResponsive {<br />
+                &nbsp;  @media (width <= map-get($mobile-breakpoints, tablet)) { <br />
+                &nbsp;&nbsp;// @content syntax is similar to Vue's slot where you can reuse this mixin and populate relevant styles based on the breakpoints stated <br />
+                &nbsp;&nbsp;@content; <br />
+                &nbsp;}<br />
+                }<br />
+            </code>
+        </p>
+        <p class="main__paragraph3">
+            <code>
+                <span>Extend</span><br/>
+                #{&}__paragraph1 {<br />
+                &nbsp;// We are reusing the weight() function declared in _functions.scss file and passing the param as declared in _variables.scss<br />
+                &nbsp;font-weight: weight(light);<br />
+                &nbsp;@include marginBottom;<br />
+                <br />
+                &nbsp;// adding mobileResponsive mixin for mobile view on the element<br />
+                &nbsp;@include mobileResponsive {<br />
+                &nbsp;&nbsp;text-align: text-alignment(start);<br />
+                &nbsp;}<br />
+                <br />
+                &nbsp;&:hover {<br />
+                &nbsp;&nbsp;color: $highlight-color-blue;<br />
+                &nbsp;}<br />
+                }<br />
+                <br />
+                // Extend is an extension if styles inherits from one element to another, as you see using @extend followed by the class name we gonna extend,<br />
+                // for example as below, we are re-using main__paragraph1's styles to main__paragraph2 and so on, but we also can add more style into extended class where it takes priority<br />
+                // over the inherited class<br />
+                #{&}__paragraph2, #{&}__paragraph3 {<br />
+                &nbsp;@extend .main__paragraph1;<br />
+                    <br />
+                &nbsp;// this hover class has different styling from inherited styling, and it takes priority over the inherited ones<br />
+                &nbsp;&:hover {<br />
+                &nbsp;&nbsp;color: $highlight-color-pink-hover;<br />
+                &nbsp;}<br />
+                }<br />
+                <br/>
+                <span>Math Operations</span><br />
+                // in CSS we need calc() method, but in SCSS we dont need that method to perform Math operations<br />
+                // Noted: In SCSS we can only perform math operation of the same type, like 80%- 50%, but we can't do 80% - 30px, we can override this using CSS's calc() method here<br />
+                // which works fine on SCSS should that need arises<br />
+                width: 100% - 10%;<br />
+            </code>
+        </p>
     </div>
     <footer class="footer">
         <p class="info">
