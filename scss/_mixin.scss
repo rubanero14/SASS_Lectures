@@ -23,7 +23,7 @@
 
 // Mixin for dynamic media query or mobile responsiveness
 @mixin mobileResponsive {
-    @media (width <= map-get($mobile-breakpoints, mobile)) {
+    @media (width <= map-get($mobile-breakpoints, tablet)) {
         //@content syntax is similar to Vue's slot where you can reuse this mixin and populate relevant styles based on the breakpoints stated
         @content;
     }
