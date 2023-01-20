@@ -37,11 +37,11 @@ body {
         }
 
         &:hover {
-            color: $highlight-color;
+            color: $highlight-color-blue;
         }
     }
-
-    #{&}__paragraph {
+    
+    #{&}__paragraph1 {
         // We are reusing the weight() function declared in _functions.scss file and passing the param as declared in _variables.scss
         font-weight: weight(light);
         text-align: text-alignment(start);
@@ -53,7 +53,19 @@ body {
         }
 
         &:hover {
-            color: $highlight-color
+            color: $highlight-color-blue
+        }
+    }
+
+    // Extend is an extension if styles inherits from one element to another, as you see using @extend followed by the class name we gonna extend,
+    // for example as below, we are re-using main__paragraph1's styles to main__paragraph2 and so on, but we also can add more style into extended class where it takes priority
+    // over the inherited class
+    #{&}__paragraph2, #{&}__paragraph3 {
+        @extend .main__paragraph1;
+
+        // this hover class has different styling from inherited styling, and it takes priority over the inherited ones
+        &:hover {
+            color: $highlight-color-orange;
         }
     }
 }
