@@ -1,5 +1,5 @@
 # SASS_Lectures
-# vIn-depth learning about SASS
+# In-depth learning about SASS
 
 ```
 Variables
